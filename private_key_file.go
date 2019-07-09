@@ -18,3 +18,13 @@ func PrivateKeyFile(file string) ssh.AuthMethod {
 
 	return ssh.PublicKeys(key)
 }
+
+
+func PrivateKey([]byte key_buffer) ssh.AuthMethod {
+	key, err := ssh.ParsePrivateKey(key_buffer)
+	if err != nil {
+		return nil
+	}
+
+	return ssh.PublicKeys(key)
+}
