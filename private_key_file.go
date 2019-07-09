@@ -20,7 +20,7 @@ func PrivateKeyFile(file string) ssh.AuthMethod {
 }
 
 
-func PrivateKey([]byte key_buffer) ssh.AuthMethod {
+func PrivateKey(key_buffer []byte) ssh.AuthMethod {
 	key, err := ssh.ParsePrivateKey(key_buffer)
 	if err != nil {
 		return nil
